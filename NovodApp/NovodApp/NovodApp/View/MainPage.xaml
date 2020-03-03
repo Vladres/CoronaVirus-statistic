@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="NovodApp.MainPage">
+    <StackLayout Spacing="0" >
+        <Grid BackgroundColor="#319ede" Padding="5"> 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Text="Button"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Image Grid.Column="1" Source="anonim.png" HorizontalOptions="Center" Aspect="Fill" HeightRequest="30"  />
+            <ImageButton Grid.Column="2" Source="lupa.png" Command="{Binding SearchClick}" Aspect="AspectFill" HorizontalOptions="EndAndExpand" HeightRequest="50" BackgroundColor="#319ede"/>
+        </Grid>
+        <Entry  Placeholder="Login" IsVisible="{Binding VisiblyEntry}"/>
+        <CollectionView ItemsSource="{Binding items}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="Coral">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.ColumnSpan="3" Source="{Binding ImageURl}" HeightRequest="100"  />
+                        <Label Grid.Row="1" Grid.ColumnSpan="3" Text ="{Binding Login}" HorizontalOptions="Center" />
+                        <Label Grid.Row="2" Grid.ColumnSpan="3" Text="{Binding Location}" HorizontalOptions="Center"/>
+                        <Label Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding  Email}" HorizontalOptions="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
