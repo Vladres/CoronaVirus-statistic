@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="NovodApp.MainPage">
+    <StackLayout Spacing="0" >
+        <Grid BackgroundColor="#319ede" Padding="5"> 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Text="Button"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Image Grid.Column="1" Source="anonim.png" HorizontalOptions="Center" Aspect="Fill" HeightRequest="30"  />
+            <ImageButton Grid.Column="2" Source="lupa.png" Aspect="AspectFill" HorizontalOptions="EndAndExpand" HeightRequest="50" BackgroundColor="#319ede"/>
+        </Grid>
+        <Grid BackgroundColor="#52d996">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
