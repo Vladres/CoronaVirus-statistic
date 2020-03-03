@@ -1,6 +1,5 @@
-﻿using System;
+﻿
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace NovodApp
 {
@@ -9,7 +8,6 @@ namespace NovodApp
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 
