@@ -5,45 +5,64 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="NovodApp.MainPage">
-    <StackLayout Spacing="0" >
-        <Grid BackgroundColor="#319ede" Padding="5"> 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Text="Button"  HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
-            <Image Grid.Column="1" Source="anonim.png" HorizontalOptions="Center" Aspect="Fill" HeightRequest="30"  />
-            <ImageButton Grid.Column="2" Source="lupa.png" Command="{Binding SearchClick}" Aspect="AspectFill" HorizontalOptions="EndAndExpand" HeightRequest="50" BackgroundColor="#319ede"/>
-        </Grid>
-        <Entry  Placeholder="Login" IsVisible="{Binding VisiblyEntry}"/>
-        <CollectionView ItemsSource="{Binding items}">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid BackgroundColor="Coral">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Grid.Row="0" Grid.ColumnSpan="3" Source="{Binding ImageURl}" HeightRequest="100"  />
-                        <Label Grid.Row="1" Grid.ColumnSpan="3" Text ="{Binding Login}" HorizontalOptions="Center" />
-                        <Label Grid.Row="2" Grid.ColumnSpan="3" Text="{Binding Location}" HorizontalOptions="Center"/>
-                        <Label Grid.Row="3" Grid.ColumnSpan="3" Text="{Binding  Email}" HorizontalOptions="Center"/>
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-
-        </CollectionView>
+    <StackLayout Spacing="0">
+        <StackLayout Orientation="Horizontal" 
+             BackgroundColor="#110a1c" >
+            <Button HorizontalOptions="StartAndExpand" Text="Main" TextColor="White" BackgroundColor="#110a1c" FontSize="Large"/>
+            <Button HorizontalOptions="CenterAndExpand" Text="Search" TextColor="White" BackgroundColor="#110a1c" FontSize="Large"/>
+            <Button HorizontalOptions="EndAndExpand" Text="About" TextColor="White" BackgroundColor="#110a1c" FontSize="Large"/>
+        </StackLayout>
+        <Entry x:Name="_userEntry" 
+               Placeholder="Country" 
+               TextChanged="OnGetButtonClicked" />
+        <Frame BorderColor="#23133b" Padding="2">
+            <StackLayout  BackgroundColor="#110a1c">
+                <StackLayout Padding="10" Spacing="0" Margin="0" >
+                    <Label Text="{Binding Country}"
+                           Style="{StaticResource labelResultStyle}"
+                           FontSize="Title"
+                           TextColor="White"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="CoronaVirus cases :"
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                        <Label Text="{Binding Cases}"
+                           Style="{StaticResource labelResultStyle}" TextColor="White"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Deaths :" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                        <Label Text="{Binding Deaths}" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="TodayCases :" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                        <Label Text="{Binding TodayCases}" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Recovered :" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                        <Label Text="{Binding Recovered}" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Active :" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                        <Label Text="{Binding Active}" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Critical :" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                        <Label Text="{Binding Critical}" 
+                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
     </StackLayout>
+        
+       
 
 </ContentPage>

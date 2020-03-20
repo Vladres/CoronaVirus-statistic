@@ -1,49 +1,94 @@
 ﻿using NovodApp.Model;
 using System.ComponentModel;
+using Newtonsoft.Json;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace NovodApp.ViewModel
 {
-    class ItemVM : INotifyPropertyChanged
+    public class ItemVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public Item item { get; set; }
 
-        public string ImageURl
+        [JsonProperty("cases")]
+        public string Cases
         {
-            get { return item.imageURl; }
-            set { item.imageURl = value; OnPropertyChanged("ImageURl"); }
+            get { return item.cases; }
+            set { item.cases = value; OnPropertyChanged("Cases"); }
         }
-        public string Login
+
+        [JsonProperty("country")]
+        public string Country
         {
-            get { return item.login; }
-            set { item.login = value; OnPropertyChanged("Login"); }
+            get { return item.country; }
+            set { item.country = value; OnPropertyChanged("Country"); }
         }
-        public string Email
+
+        [JsonProperty("deaths")]
+        public string Deaths
         {
-            get { return item.email; }
-            set { item.email = value; OnPropertyChanged("Email"); }
+            get { return item.deaths; }
+            set { item.deaths = value; OnPropertyChanged("Deaths"); }
         }
-        public string Location
+
+        [JsonProperty("todayCases")]
+        public string TodayCases
         {
-            get { return item.location; }
-            set { item.location = value; OnPropertyChanged("Location"); }
+            get { return item.todayCases; }
+            set { item.todayCases = value; OnPropertyChanged("Location"); }
         }
-        public ItemVM(string ImageURl , string Login, string Email,string Location)
+
+        [JsonProperty("recovered")]
+        public string Recovered
+        {
+            get { return item.recovered; }
+            set { item.recovered = value; OnPropertyChanged("Recovered"); }
+        }
+
+        [JsonProperty("active")]
+        public string Active
+        {
+            get { return item.active; }
+            set { item.active = value; OnPropertyChanged("Active"); }
+        }
+        [JsonProperty("critical")]
+        public string Critical
+        {
+            get { return item.critical; }
+            set { item.critical = value; OnPropertyChanged("Critical"); }
+        }
+
+
+        public ItemVM(string Cases , string Country, string Deaths, string TodayCases ,string Recovered , string Active,string Critical)
         {
             item = new Item();
-            this.ImageURl = ImageURl;
-            this.Login = Login;
-            this.Email = Email;
-            this.Location = Location;
+            this.Cases = Cases;
+            this.Country = Country;
+            this.Deaths = Deaths;
+            this.TodayCases = TodayCases;
+            this.Recovered = Recovered;
+            this.Active = Active;
+            this.Critical = Critical;
+
+        }
+        public ItemVM(string ex)
+        {
+            item = new Item();
+            this.Country = "sorry not found :(";
         }
         public ItemVM()
         {
             item = new Item();
-            this.ImageURl = "";
-            this.Login = "";
-            this.Email = "";
-            this.Location = "";
+            this.Cases = "";
+            this.Country = "";
+            this.Deaths = "";
+            this.TodayCases = "";
+            this.Recovered = "";
+            this.Active = "";
+            this.Critical = "";
         }
+
         public void OnPropertyChanged(string prop = "")
               => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
     }

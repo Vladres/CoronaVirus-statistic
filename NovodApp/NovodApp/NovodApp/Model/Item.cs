@@ -1,10 +1,31 @@
-﻿namespace NovodApp.Model
+﻿using Newtonsoft.Json;
+
+namespace NovodApp.Model
 {
-    class Item
+    public class Item
     {
-        public string imageURl;
-        public string login;
-        public string email;
-        public string location;
+        [JsonProperty("country")]
+        public string country;
+
+        [JsonProperty("cases")]
+        public string cases;
+
+        [JsonProperty("todayCases")]
+        public string todayCases;
+
+        [JsonProperty("deaths")]
+        public string deaths;
+
+        [JsonProperty("recovered")]
+        public string recovered;
+
+        [JsonProperty("active")]
+        public string active;
+
+        [JsonProperty("critical")]
+        public string critical;
+
+
+
     }
 }
