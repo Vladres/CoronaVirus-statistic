@@ -10,30 +10,25 @@ namespace NovodApp
     public partial class MainPage : ContentPage
     {
         RestService _restService;
-
-        public MainPage()
+        public MainPage() 
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             _restService = new RestService();
-            BindingContext = new MainPageVM(Navigation);
-        }
-        async void OnGetButtonClicked(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(_userEntry.Text))
-            {
-                ItemVM itemData = await _restService.GetInfoData(GenerateRequestUri(Constants.OpenMapEndpoint));
-                if (itemData != null)
-                    BindingContext = itemData;
-                else
-                    BindingContext = new ItemVM("Sorry not found");
-            }
+            this.OnGetInfo();
         }
 
-        string GenerateRequestUri(string endpoint)
+        async void OnGetInfo()
         {
-            string requestUri = endpoint;
-            requestUri += $"{_userEntry.Text}";
-            return requestUri;
+            MainPageVM itemData = await _restService.GetInfo(Constants.OpenMapEndpoint + "all");
+            if (itemData != null)
+            {
+                itemData.Navigation = Navigation;
+                BindingContext = itemData;
+            }
+                
+            else
+                BindingContext = new MainPageVM("Sorry not found", Navigation);
         }
 
     }

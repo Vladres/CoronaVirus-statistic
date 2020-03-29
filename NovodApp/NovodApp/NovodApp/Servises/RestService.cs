@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using NovodApp.Model;
 using NovodApp.ViewModel;
 
 namespace NovodApp
@@ -17,16 +16,16 @@ namespace NovodApp
             _client = new HttpClient();
         }
 
-        public async Task<ItemVM> GetInfoData(string uri)
+        public async Task<SearchVM> GetInfoData(string uri)
         {
-            ItemVM itemData = null;
+            SearchVM itemData = null;
             try
             {
                 var response = await _client.GetAsync(uri);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
-                    itemData = JsonConvert.DeserializeObject<ItemVM>(content);
+                    itemData = JsonConvert.DeserializeObject<SearchVM>(content);
                 }
             }
             catch (Exception ex)
@@ -35,6 +34,23 @@ namespace NovodApp
             }
             return itemData;
         }
-
+        public async Task<MainPageVM> GetInfo(string uri)
+        {
+            MainPageVM itemData = null;
+            try
+            {
+                var response = await _client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    itemData = JsonConvert.DeserializeObject<MainPageVM>(content);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("\tERROR {0}", ex.Message);
+            }
+            return itemData;
+        }
     }
 }

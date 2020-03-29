@@ -10,15 +10,16 @@
         <Style x:Key="labelStyle" 
                    TargetType="Label">
             <Setter Property="FontSize" 
-                        Value="Small" />
-            <Setter Property="TextColor" 
-                        Value="Gray" />
+                        Value="22" />
+            <Setter Property ="FontFamily"
+                    Value="BebasNeue-Regular.ttf#BebasNeue-Regular"/>
         </Style>
-
         <Style x:Key="labelResultStyle" 
                    TargetType="Label">
             <Setter Property="FontSize" 
-                        Value="15" />
+                        Value="22" />
+            <Setter Property ="FontFamily"
+                    Value="PatrickHand-Regular.ttf#PatrickHand-Regular"/>
         </Style>
 
     </Application.Resources>
