@@ -9,17 +9,17 @@ namespace NovodApp
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
-        RestService _restService;
+        
         public MainPage() 
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            _restService = new RestService();
             this.OnGetInfo();
         }
 
         async void OnGetInfo()
         {
+            RestService _restService = new RestService();
             MainPageVM itemData = await _restService.GetInfo(Constants.OpenMapEndpoint + "all");
             if (itemData != null)
             {
