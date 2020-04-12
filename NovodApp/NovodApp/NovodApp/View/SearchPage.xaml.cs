@@ -1,5 +1,6 @@
 ﻿using NovodApp.ViewModel;
 using System;
+using System.ComponentModel;
 using WebServiceTutorial;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -26,10 +27,9 @@ namespace NovodApp.View
                 if (itemData != null)
                     BindingContext = itemData;
                 else
-                    BindingContext = new SearchVM("Sorry not found",Navigation);
+                    BindingContext = new SearchVM("Sorry not found", Navigation);
             }
         }
-
         string GenerateRequestUri(string endpoint)
         {
             string requestUri = endpoint;

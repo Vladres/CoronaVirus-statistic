@@ -21,6 +21,7 @@
             <Setter Property ="FontFamily"
                     Value="PatrickHand-Regular.ttf#PatrickHand-Regular"/>
         </Style>
+        
 
     </Application.Resources>
 </Application>

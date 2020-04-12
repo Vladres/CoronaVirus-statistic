@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<resources>
+  <resources>
+    <style name="MyTheme" >
+      <item name="android:windowBackground">@drawable/splash_screen</item>
+      <item name="android:windowNoTitle">true</item>
+      <item name="android:windowFullscreen">true</item>
+      <item name="android:windowContentOverlay">@null</item>
+      <item name="android:windowActionBar">true</item>
+  </style>
 
   <style name="MainTheme" parent="MainTheme.Base">
   </style>
@@ -23,7 +30,8 @@
 
     <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
   </style>
-
+  
+ 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF4081</item>
   </style>

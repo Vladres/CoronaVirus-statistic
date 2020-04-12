@@ -24,8 +24,5 @@ namespace NovodApp.Model
 
         [JsonProperty("critical")]
         public string critical;
-
-
-
     }
 }
