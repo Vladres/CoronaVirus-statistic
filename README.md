@@ -1,5 +1,5 @@
-# ProjectToKyrsova
- C# Xamarin Seacher NovodApp
+# CoronaVirusTrecker
+ C# Xamarin Seacher by Novod
 
 Download apk file and install to your Phone;
 
