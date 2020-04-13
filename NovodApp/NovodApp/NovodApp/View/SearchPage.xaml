@@ -5,65 +5,69 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="NovodApp.View.SearchPage"
-             BackgroundColor="#291a3b">
+             BackgroundColor="#291a3b"
+             BackgroundImageSource="earth.jpg">
     <ContentPage.Content>
         <StackLayout Spacing="0">
             <StackLayout Orientation="Horizontal" 
-             BackgroundColor="#110a1c" >
+                         BackgroundColor="#110a1c">
                 <Button HorizontalOptions="EndAndExpand" 
                     Text="About"
                     TextColor="White" 
                     BackgroundColor="#110a1c" 
                     FontSize="Medium"
-                    Command="{Binding AboutClick}"/>
+                    Command="{Binding AboutClick}"
+                    CommandParameter="https://covid19.gov.ua/"/>
             </StackLayout>
             <Entry x:Name="_userEntry" 
                Placeholder="Country" 
                TextChanged="OnGetInfo"
                TextColor="White"
-               PlaceholderColor="#51485c"/>
-            <Frame BorderColor="#23133b" Padding="2">
-                <StackLayout  BackgroundColor="#110a1c">
-                    <StackLayout Padding="10" Spacing="0" Margin="0" >
+               PlaceholderColor="#51485c"
+               FontSize="25"
+               HeightRequest="100"/>
+            <Frame BorderColor="#23133b" Padding="2" VerticalOptions="Center">
+                <StackLayout  BackgroundColor="#110a1c" Padding="10">
+                    <StackLayout Padding="15" Spacing="0" Margin="0" >
                         <Label Text="{Binding Country}"
-                           Style="{StaticResource labelResultStyle}"
+                           Style="{StaticResource SearchlabelResultStyle}"
                            FontSize="Title"
                            TextColor="White"/>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="CoronaVirus cases :"
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                             <Label Text="{Binding Cases}"
-                           Style="{StaticResource labelResultStyle}" TextColor="White"/>
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Deaths :" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                             <Label Text="{Binding Deaths}" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="TodayCases :" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                             <Label Text="{Binding TodayCases}" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Recovered :" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                             <Label Text="{Binding Recovered}" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Active :" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                             <Label Text="{Binding Active}" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Critical :" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                             <Label Text="{Binding Critical}" 
-                           Style="{StaticResource labelResultStyle}" TextColor="White" />
+                           Style="{StaticResource SearchlabelResultStyle}" TextColor="White" />
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>

@@ -10,18 +10,30 @@
         <Style x:Key="labelStyle" 
                    TargetType="Label">
             <Setter Property="FontSize" 
-                        Value="22" />
+                        Value="33" />
             <Setter Property ="FontFamily"
                     Value="BebasNeue-Regular.ttf#BebasNeue-Regular"/>
         </Style>
         <Style x:Key="labelResultStyle" 
                    TargetType="Label">
             <Setter Property="FontSize" 
-                        Value="22" />
+                        Value="30" />
             <Setter Property ="FontFamily"
                     Value="PatrickHand-Regular.ttf#PatrickHand-Regular"/>
         </Style>
-        
-
+        <Style x:Key="SearchlabelResultStyle" 
+                   TargetType="Label">
+            <Setter Property="FontSize" 
+                        Value="25" />
+            <Setter Property ="FontFamily"
+                    Value="PatrickHand-Regular.ttf#PatrickHand-Regular"/>
+        </Style>
+        <Style x:Key="MainContentLabel" 
+                   TargetType="Label">
+            <Setter Property="FontSize" 
+                        Value="20" />
+            <Setter Property ="FontFamily"
+                    Value="PatrickHand-Regular.ttf#PatrickHand-Regular"/>
+        </Style>
     </Application.Resources>
 </Application>

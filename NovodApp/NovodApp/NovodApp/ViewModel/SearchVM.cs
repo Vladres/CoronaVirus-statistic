@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using Newtonsoft.Json;
 using Xamarin.Forms;
-using NovodApp.View;
 
 namespace NovodApp.ViewModel
 {
@@ -58,7 +57,7 @@ namespace NovodApp.ViewModel
             get { return item.critical; }
             set { item.critical = value; OnPropertyChanged("Critical"); }
         }
-
+        [System.Obsolete]
         public SearchVM(string Cases , string Country, string Deaths, string TodayCases ,string Recovered , string Active,string Critical)
         {
             item = new Item();
@@ -69,8 +68,9 @@ namespace NovodApp.ViewModel
             this.Recovered = Recovered;
             this.Active = Active;
             this.Critical = Critical;
+            AboutClick = new Command<string>((url) => Device.OpenUri(new System.Uri(url)));
         }
-
+        [System.Obsolete]
         public SearchVM(INavigation navigation)
         {
             item = new Item();
@@ -81,9 +81,10 @@ namespace NovodApp.ViewModel
             this.Recovered = "";
             this.Active = "";
             this.Critical = "";
+            AboutClick = new Command<string>((url) => Device.OpenUri(new System.Uri(url)));
             Navigation = navigation;
         }
-
+        [System.Obsolete]
         public SearchVM()
         {
             item = new Item();
@@ -93,13 +94,16 @@ namespace NovodApp.ViewModel
             this.TodayCases = "";
             this.Recovered = "";
             this.Active = "";
+            AboutClick = new Command<string>((url) => Device.OpenUri(new System.Uri(url)));
             this.Critical = "";
         }
+        [System.Obsolete]
         public SearchVM(string ex, INavigation Navigation)
         {
             item = new Item();
             this.Country = "sorry not found :(";
             this.Navigation = Navigation;
+            AboutClick = new Command<string>((url) => Device.OpenUri(new System.Uri(url)));
         }
        
         public Command AboutClick { protected set; get; }

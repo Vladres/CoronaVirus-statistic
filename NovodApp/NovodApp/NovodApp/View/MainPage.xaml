@@ -5,15 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="NovodApp.MainPage"
-             BackgroundColor="#291a3b">
-    <StackLayout Spacing="0">
+             BackgroundColor="#291a3b"
+             BackgroundImageSource="earth.jpg">
+    <StackLayout Spacing="0" >
         <StackLayout Orientation="Horizontal" 
              BackgroundColor="#110a1c" >
             <Button HorizontalOptions="StartAndExpand"
                     Text="Main"
                     TextColor="Blue" 
-                    BackgroundColor="#110a1c" 
                     FontSize="Medium"
+                    BackgroundColor="#110a1c"
                     Command="{Binding MainClick}"/>
             <Button HorizontalOptions="CenterAndExpand" 
                     Text="Search"
@@ -26,29 +27,38 @@
                     TextColor="White" 
                     BackgroundColor="#110a1c" 
                     FontSize="Medium"
-                    Command="{Binding AboutClick}"/>
+                    Command="{Binding AboutClick}"
+                    CommandParameter="https://www.worldometers.info/coronavirus/"/>
         </StackLayout>
-        <Frame  Padding="3" >
-            <StackLayout BackgroundColor="#110a1c" Spacing="5" >
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="CoronaVirus cases :"
+        <StackLayout  Spacing="5" Padding="0,10,0,0">
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="CoronaVirus cases :"
                                Style="{StaticResource labelStyle}" TextColor="White" />
-                    <Label Text="{Binding Cases}"
+                <Label Text="{Binding Cases}"
                                Style="{StaticResource labelResultStyle}" TextColor="White"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Deaths :" 
-                               Style="{StaticResource labelStyle}" TextColor="White" />
-                    <Label Text="{Binding Deaths}" 
-                               Style="{StaticResource labelResultStyle}" TextColor="White" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Recovered :" 
-                               Style="{StaticResource labelStyle}" TextColor="White" />
-                    <Label Text="{Binding Recovered}" 
-                               Style="{StaticResource labelResultStyle}" TextColor="White" />
-                </StackLayout>
             </StackLayout>
-        </Frame>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Deaths :" 
+                               Style="{StaticResource labelStyle}" TextColor="White" />
+                <Label Text="{Binding Deaths}" 
+                               Style="{StaticResource labelResultStyle}" TextColor="White" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Recovered :" 
+                               Style="{StaticResource labelStyle}" TextColor="White" />
+                <Label Text="{Binding Recovered}" 
+                               Style="{StaticResource labelResultStyle}" TextColor="White" />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout  Spacing="5"  VerticalOptions="EndAndExpand" Padding="5" Margin="10">
+            <Label Style="{StaticResource MainContentLabel}"
+                       TextColor="White"
+                       Text="How to protect yourself and your loved ones?" />
+            <Label Style="{StaticResource MainContentLabel}" 
+                       TextColor="White">
+                In order to protect yourself and your loved ones, you should clearly follow the appropriate guidelines. Do not self-medicate and consult your family doctor immediately if you have any symptoms.
+            </Label>
+        </StackLayout>
+        
     </StackLayout>
 </ContentPage>
